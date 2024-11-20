@@ -1,0 +1,17 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/usr/include/hdf5/serial",
+                "/usr/lib/gcc/x86_64-linux-gnu/13/include/"
+            ],
+            "compilerPath": "/opt/opencilk/opencilk-2.1.0-x86_64-linux-gnu-ubuntu-22.04/bin/clang",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "linux-clang-x64"
+        }        
+    ],
+    "version": 4
+}

@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "knn.h": "c",
+        "utilities.h": "c",
+        "cilk.h": "c",
+        "cilk_api.h": "c"
+    }
+}
