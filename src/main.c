@@ -54,14 +54,14 @@ int main(int argc, char *argv[])
     double elapsed_time = end - start; // Calculate elapsed time
 
     // Print results
-    // for (int q = 0; q < Q.rows; q++)
-    // {
-    //     for (int l = 0; l < k; l++)
-    //     {
-    //         printf("Query %d, Neighbor %d: %d\n", q, l, idx[q * k + l]);
-    //     }
-    //     printf("\n");
-    // }
+    for (int q = 0; q < Q.rows; q++)
+    {
+        for (int l = 0; l < k; l++)
+        {
+            printf("Query %d, Neighbor %d: %d\n", q, l, idx[q * k + l]);
+        }
+        printf("\n");
+    }
 
     printf("\nExecution time : %f second\n", elapsed_time);
     printf("Size of dataset: %d\n", Q.rows);
