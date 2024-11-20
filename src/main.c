@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
     Matrix Q;                              // Query matrix
     import_matrix_from_file(filename, &Q); // Import query data from file
 
-    Q.rows /= 1;                // Reduce the number of queries for testing purposes (eg big datasets)
+    Q.rows /= 500;                // Reduce the number of queries for testing purposes (eg big datasets)
     num_query = Q.rows;           // Get number of queries in the dataset
     int CORPUS_CHUNK_SIZE = 1000; // Set maximum chunk size
 
@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
 
     compute_norms(&Q, squared_norms); // Precompute squared norms of the query data
 
-    if (strstr(argv[0], "BruteForce"))
+    if (strstr(argv[0], "Sequential"))
         knnsearch_chunked(&Q, &Q, k, idx, dst, CORPUS_CHUNK_SIZE, squared_norms, 0); // Perform k-NN search
     else
     {
@@ -54,14 +54,14 @@ int main(int argc, char *argv[])
     double elapsed_time = end - start; // Calculate elapsed time
 
     // Print results
-    for (int q = 0; q < Q.rows; q++)
-    {
-        for (int l = 0; l < k; l++)
-        {
-            printf("Query %d, Neighbor %d: %d\n", q, l, idx[q * k + l]);
-        }
-        printf("\n");
-    }
+    // for (int q = 0; q < Q.rows; q++)
+    // {
+    //     for (int l = 0; l < k; l++)
+    //     {
+    //         printf("Query %d, Neighbor %d: %d\n", q, l, idx[q * k + l]);
+    //     }
+    //     printf("\n");
+    // }
 
     printf("\nExecution time : %f second\n", elapsed_time);
     printf("Size of dataset: %d\n", Q.rows);

@@ -19,7 +19,7 @@ BUILD_DIR = build
 COMMON_SRC = $(SRC_DIR)/main.c $(SRC_DIR)/utilities.c
 
 # Variants
-VARIANTS = OpenCilk OpenMP Pthreads BruteForce
+VARIANTS = OpenCilk OpenMP Pthreads Sequential
 
 # Output executable
 OUT = $(BUILD_DIR)/$(VARIANT)

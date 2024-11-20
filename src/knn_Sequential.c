@@ -72,6 +72,6 @@ void knnsearch_recursive(const Matrix *Q __attribute__((unused)), int *idx __att
                          int HEIGHT __attribute__((unused)), int depth __attribute__((unused)),
                          int mid_offset __attribute__((unused)), float *squared_norms __attribute__((unused)))
 {
-    fprintf(stderr, "knnsearch_recursive is not implemented in BruteForce.\n");
+    fprintf(stderr, "knnsearch_recursive is not implemented in Sequential.\n");
     exit(EXIT_FAILURE);
 }
