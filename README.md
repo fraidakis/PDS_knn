@@ -59,7 +59,7 @@ After the script has completed running, the results will be saved in the followi
   
   - `./<type>/<dataset>/Analytic/results_<dataset>_<sampling_reduction>_<candidate_reduction>_<minsize_factor>.txt`
 
-- **Statistics** (only for `OpenCilk`, `OpenMP`, and `Pthreads`):
+- **Statistics** 
   
   - `./<type>/<dataset>/Statistics/statistics_<dataset>_<sampling_reduction>_<candidate_reduction>_<minsize_factor>.txt`
 
