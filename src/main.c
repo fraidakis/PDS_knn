@@ -6,9 +6,9 @@ int main(int argc, char *argv[])
     int num_query;     // Number of queries
     const int k = 100; // Number of nearest neighbors to find
 
-    const char *path = "/home/fraidakisg/Desktop/P&D_S/1η_εργασία_linux/Datasets/";                        // Path to datasets
+    const char *path = "./../Datasets/";                        // Path to datasets
     char filename[128];                                                                                    // Filename for dataset to import
-    strcpy(filename, "/home/fraidakisg/Desktop/P&D_S/1η_εργασία_linux/Datasets/sift-128-euclidean.hdf5"); // Default dataset
+    strcpy(filename, "./../Datasets/mnist-784-euclidean.hdf5"); // Default dataset
 
     if(argc == 5)
         update_file_name(filename, path, argv[1]); // Update filename based on command line arguments
@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
     Matrix Q;                              // Query matrix
     import_matrix_from_file(filename, &Q); // Import query data from file
 
-    Q.rows /= 500;                // Reduce the number of queries for testing purposes (eg big datasets)
+    Q.rows /= 1;                // Reduce the number of queries for testing purposes (eg big datasets)
     num_query = Q.rows;           // Get number of queries in the dataset
     int CORPUS_CHUNK_SIZE = 1000; // Set maximum chunk size
 
@@ -74,8 +74,3 @@ int main(int argc, char *argv[])
 
     return 0;
 }
-
-// fashion-mnist-784-euclidean.hdf5 -> /8, 20, 100 or /8, 40, 100
-// mnist-784-euclidean.hdf5 -> /16, 20, 200 or /16, 40, 100
-// sift-128-euclidean.hdf5  size/7 -> /16, 20, 100 or /16, 40, 100
-// sift-128-euclidean.hdf5  size/13 -> /8, 20, 100
